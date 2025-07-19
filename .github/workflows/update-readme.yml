@@ -10,9 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Update README with recent repositories
         uses: gautamkrishnar/blog-post-workflow@master
         with:
-          repo_type: public
+          gh_token: ${{ secrets.GITHUB_TOKEN }}
           max_post_count: 5
-          custom_post_type: "recent-repos"
+          feed_list: "https://github.com/KhalilNiazi.atom"
